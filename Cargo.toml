@@ -1,0 +1,33 @@
+[package]
+name = "clean-my-files"
+version = "0.1.0"
+authors = ["Steven Xie <dev@stevenxie.me>"]
+edition = "2018"
+
+
+[dependencies]
+anyhow = "1"
+clap = { version = "3.0.0-beta.2", features = ["color"] }
+lazy_static = "1"
+log = { version = "0.4" }
+logger = { package = "pretty_env_logger", version = "0.4" }
+rayon = "1"
+regex = "1"
+
+
+[build-dependencies]
+anyhow = "1"
+chrono = "0.4"
+git = { package = "git2", version = "0.13" }
+semver = "0.11"
+
+[build-dependencies.cargo-husky]
+version = "1"
+default-features = false
+features = [
+  "precommit-hook",
+  "run-for-all",
+  "run-cargo-check",
+  "run-cargo-clippy",
+  "run-cargo-fmt",
+]
